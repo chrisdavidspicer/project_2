@@ -7,6 +7,7 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
+    "method-override": "^3.0.0",
     "morgan": "^1.10.0",
     "pg": "^8.5.1",
     "rowdy-logger": "^1.0.2",
@@ -19,7 +20,6 @@
   "description": "The cocktail cabinet is an app that allows users to log in and build their digital liquor cabinet. Update your profile with the quantity of bottles you have in your physical liquor cabinet, and then browse through possible cocktails to make using what you have on hand! If you find a recipe that sounds good, save it to your profile to access anytime you log in. Your possible cocktail list will change depending on updates to your liquor cabinet.",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chrisdavidspicer/project_2.git"

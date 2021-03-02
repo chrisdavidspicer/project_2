@@ -1,0 +1,12 @@
+<h1>All Liquor Bottles</h1>
+
+<div>
+  <div class="bottle">
+    <a href="/bottles/<%= bottle.id %>">
+      <img src="" alt="">
+    </a>
+    <form method="POST" action="/users/<%= user.id %>/bottles/?_method=PUT">
+      <input type="submit" class="add-bottle" name="type" value="Add">
+    </form>
+  </div>
+</div>
