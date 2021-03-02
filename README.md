@@ -84,5 +84,5 @@ I am planning on using The Cocktail DB, which is a free, crowd-sourced API full 
 ![erd](./erd.png)
 
 ### RESTful routing chart for your app ###
-![Routes-1](./img/Routes-1.png)
-![Routes-2](./img/Routes-2.png)
+![Routes-1](./img/routes/Routes-1.png)
+![Routes-2](./img/routes/Routes-2.png)
