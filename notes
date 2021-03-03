@@ -1,8 +1,11 @@
-Build out routes in specific controllers.
+Questions:
+figure out connecting bottles to cocktails
+How to delete bottle/cocktail from user without deleting bottle/cocktail
+
+Use postman for routes
 add user to res.locals
 Connect api to routes
 add decryption/encryption
-double check all routes finished and working
 build out views and layout
 
 

@@ -21,3 +21,10 @@ nav a {
 nav a:hover {
   text-shadow: 2px 2px 3px #e3caa7;
 }
+
+#user-nav {
+  background-color: rgb(215, 178, 133);
+  /* padding: 10px; */
+  flex-direction: row;
+  justify-content: space-around;
+}

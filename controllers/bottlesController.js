@@ -19,29 +19,4 @@ router.get('/:id', async (req, res) => {
   }
 })
 
-// Add new bottle to collection
-router.post('/', async (req, res) => {
-  try {
-    const newBottle = await db.bottle.create({
-      type: req.body.type,
-      img_url: req.body.img_url,
-    })
-    res.redirect('/bottles/index', { user: newBottle })
-  } catch (error) {
-    console.log(error);
-  }
-})
-
-// Delete bottle from collection
-router.delete('/:id', async (req, res) => {
-  try {
-    const deletedBottle = await db.bottle.destroy({
-      where: { id: req.params.id }
-    })
-    res.redirect('/bottles/index')
-  } catch (error) {
-    console.log(error);
-  }
-})
-
 module.exports = router

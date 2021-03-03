@@ -28,13 +28,32 @@ router.get('/list', async (req, res) => {
 })
 
 // Show info for one specific cocktail
-
-// Add a new cocktail to the database
-
-// Delete a cocktail from the database
+router.get('/:id', async (req, res) => {
+  try {
+    const cocktailURL = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${req.params.id}`
+    const response = await axios.get(cocktailURL)
+    const cocktails = response.data.drinks
+    // console.log(cocktails);
+    res.render('cocktails/show', { cocktail: cocktails })
+  } catch (error) {
+    console.log(error);
+  }
+})
 
 // Find all bottles in cocktail
-
-// Find specific bottle in cocktail
+router.get('/:id/bottles', async (req, res) => {
+  try {
+    const cocktail = await db.cocktail.findOne({
+      where: {id: req.params.id},
+      include: [db.bottle]
+    })
+    const cocktailURL = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${req.params.id}`
+    const response = await axios.get(cocktailURL)
+    const cocktails = response.data.drinks
+    res.render('users/recipes', { cocktail, cocktails })
+  } catch (error) {
+    console.log(error);
+  }
+})
 
 module.exports = router
