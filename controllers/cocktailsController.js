@@ -15,13 +15,13 @@ router.get('/', async (req, res) => {
 })
 
 // Show list of cocktails sorted by category
-router.get('/', async (req, res) => {
+router.get('/list', async (req, res) => {
   try {
     const category = req.body.category
     const cocktailURL = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`
     const response = await axios.get(cocktailURL)
     const cocktails = response.data.drinks
-    res.render('cocktails/index', { cocktails: cocktails })
+    res.render('cocktails/list', { cocktails: cocktails })
   } catch (error) {
     console.log(error);
   }

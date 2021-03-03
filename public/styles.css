@@ -2,3 +2,22 @@ body {
   background-color: antiquewhite;
   text-align: center;
 }
+
+nav {
+  background-color: rgb(193, 148, 89);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(30, 30, 30);
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px;
+}
+
+nav a:hover {
+  text-shadow: 2px 2px 3px #e3caa7;
+}
