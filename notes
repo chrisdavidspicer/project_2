@@ -1,5 +1,9 @@
 Build out routes in specific controllers.
 add user to res.locals
+Connect api to routes
+add decryption/encryption
+double check all routes finished and working
+build out views and layout
 
 
 
