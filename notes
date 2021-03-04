@@ -1,11 +1,7 @@
 Questions:
-figure out connecting bottles to cocktails
-How to delete bottle/cocktail from user without deleting bottle/cocktail
+figure out joining bottles to cocktails - how do I initially create the association?
 
 Use postman for routes
-add user to res.locals
-Connect api to routes
-add decryption/encryption
 build out views and layout
 
 
