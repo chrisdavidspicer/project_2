@@ -58,7 +58,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   const hashedPassword = bcrypt.hashSync(req.body.password, 12)
   try {
-    if(!req.body.username || !req.body.password) {
+    if(!req.body.email || !req.body.password) {
       res.render('users/new', { errors: 'Invalid username/password'})
       return;
     }
@@ -71,7 +71,7 @@ router.post('/', async (req, res) => {
     })
     const encryptedId = AES.encrypt(user.id.toString(), process.env.COOKIE_SECRET).toString()
     res.cookie('userId', encryptedId)
-    res.redirect('/bottles/index')
+    res.redirect('/users/index')
   } catch (error) {
     console.log(error);
     res.render('users/new', { errors: 'Error creating user; try again with new info?'})
@@ -171,7 +171,7 @@ router.get('/:id/cocktails', async (req, res) => {
 })
 
 // Add a new cocktail to the database - favorites
-router.post('/', async (req, res) => {
+router.post('/:id/cocktails', async (req, res) => {
   try {
     const [newCocktail, created] = await db.cocktail.findOrCreate({
       where: { name: req.body.name}
@@ -187,7 +187,7 @@ router.post('/', async (req, res) => {
 })
 
 // Add a new bottle to the cabinet
-router.post('/', async (req, res) => {
+router.post('/:id/bottles', async (req, res) => {
   try {
     const [newBottle, created] = await db.bottle.create({
       type: req.body.type,

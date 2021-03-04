@@ -1,3 +1,20 @@
 <h1>New User Sign-Up</h1>
 
-<form action=""></form>
+<form method="POST" action="/users">
+  <label for="first-name-input">First Name:</label>
+  <input type="text" name="first_name" id="first-name-input">
+  <br>
+  <label for="last-name-input">Last Name:</label>
+  <input type="text" name="last_name" id="last-name-input">
+  <br>
+  <label for="email-input">Email:</label>
+  <input type="text" name="email" id="email-input">
+  <br>
+  <label for="password-input">Password:</label>
+  <input type="password" name="password" id="password-input">
+  <br>
+  <label for="profile-image-input">Profile Image URL:</label>
+  <input type="url" name="profile_img" id="profile-image-input">
+  <br>
+  <input type="submit">
+</form>
