@@ -37,18 +37,18 @@ router.get('/:id', async (req, res) => {
 
 
 // Show all cocktail recipes that use bottles that user saved
-router.get('/:id/cocktails', async (req, res) => {
-  try {
-    const user = await db.user.findOne({
-      where: {
-      id: req.params.id
-      },
-      include: [db.bottle]
-    })
-    res.render('users/recipes', { user: user })
-  } catch (error) {
-    console.log(error);
-  }
-})
+// router.get('/:id/cocktails', async (req, res) => {
+//   try {
+//     const user = await db.user.findOne({
+//       where: {
+//       id: req.params.id
+//       },
+//       include: [db.bottle]
+//     })
+//     res.render('users/recipes', { user: user })
+//   } catch (error) {
+//     console.log(error);
+//   }
+// })
 
 module.exports = router

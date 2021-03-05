@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const db = require('../models')
+const axios = require('axios')
 const bcrypt = require('bcrypt')
 const AES = require('crypto-js/aes')
 
@@ -29,10 +30,10 @@ router.get('/login', (req, res) => {
 //   res.render('users/favorites')
 // })
 
-// Show users possible recipes page
-router.get('/recipes', (req, res) => {
-  res.render('users/recipes')
-})
+// // Show users possible recipes page
+// router.get('/recipes', (req, res) => {
+//   res.render('users/recipes')
+// })
 
 // Show users profile page
 router.get('/profile', (req, res) => {
@@ -141,6 +142,38 @@ router.get('/:id/bottles', async (req, res) => {
   } catch (error) {
     console.log(error);
   }
+})
+
+// Show users possible recipes page (find bottles that user has)
+router.get('/:id/recipes', async (req, res) => {
+  try {
+    const user = await db.user.findOne({
+      where: {
+      id: req.params.id
+      },
+      include: [db.bottle]
+    })
+    
+    const bottle = user.bottles
+    // console.log(bottle)
+    await bottle.forEach(bottle => {
+      const bottleURL = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${bottle.type}`
+      const response = axios.get(bottleURL)
+      // console.log(response.data);
+      const cocktails = response.data.drinks
+      return cocktails
+    });
+    console.log(cocktails)
+
+
+
+  } catch (error) {
+    
+  }
+
+
+
+  res.render('users/recipes')
 })
 
 // Show all cocktails that user saved

@@ -3,9 +3,18 @@ Questions:
 Debug:
 
 To-Do:
-Figuring out recipes route
-build out views and layout
+MVP:
+Add button to delete bottles from collection
+Build out recipes route and view
+Add button to delete cocktails from favorites
 
+STRETCH:
+Add single view pages for bottles, showing applicable recipes
+Add single view pages for cocktails, showing ingredients, recipe, etc.
+Add back buttons to pages
+Rating
+Commenting
+Extra Styling
 
 
 
