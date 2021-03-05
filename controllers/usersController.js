@@ -155,25 +155,20 @@ router.get('/:id/recipes', async (req, res) => {
     })
     
     const bottle = user.bottles
-    // console.log(bottle)
-    await bottle.forEach(bottle => {
-      const bottleURL = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${bottle.type}`
-      const response = axios.get(bottleURL)
-      // console.log(response.data);
-      const cocktails = response.data.drinks
-      return cocktails
-    });
-    console.log(cocktails)
+    console.log(bottle)
+    const bottleURL = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${bottle.type}`
+    const response = axios.get(bottleURL)
+    // console.log(response.data);
+    const cocktails = response.data.drinks
+    console.log(cocktails);
+    // console.log(cocktails)
 
 
 
+    res.render('users/recipes', { bottle: bottle })
   } catch (error) {
-    
+    console.log(error);
   }
-
-
-
-  res.render('users/recipes')
 })
 
 // Show all cocktails that user saved
@@ -185,9 +180,7 @@ router.get('/:id/cocktails', async (req, res) => {
       },
       include: [db.cocktail]
     })
-    // console.log(user.cocktails)
     const favorites = user.cocktails
-    // console.log(favorites);
     res.render('users/favorites', { favorites: favorites })
   } catch (error) {
     console.log(error);
@@ -235,15 +228,15 @@ router.post('/:id/bottles', async (req, res) => {
 router.delete('/:userId/cocktails/:cocktailId', async (req, res) => {
   try {
     const deletedCocktail = await db.cocktail.destroy({
-      where: { id: req.body.id }
+      where: { id: req.params.cocktailId }
     })
     const user = await db.user.findOne({
-      where: { id: req.params.id}
+      where: { id: req.params.userId}
     })
     user.removeCocktail(deletedCocktail)
-    res.redirect('/users/favorites')
+    res.redirect(`/users/${req.params.userId}/cocktails`)
   } catch (error) {
-    console.log();
+    console.log(error);
   }
 })
 
@@ -251,15 +244,15 @@ router.delete('/:userId/cocktails/:cocktailId', async (req, res) => {
 router.delete('/:userId/bottles/:bottleId', async (req, res) => {
   try {
     const deletedBottle = await db.bottle.destroy({
-      where: { id: req.body.id }
+      where: { id: req.params.bottleId }
     })
     const user = await db.user.findOne({
-      where: { id: req.params.id}
+      where: { id: req.params.userId}
     })
     user.removeBottle(deletedBottle)
-    res.redirect('/users/cabinet')
+    res.redirect(`/users/${req.params.userId}/bottles`)
   } catch (error) {
-    console.log();
+    console.log(error);
   }
 })
 

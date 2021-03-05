@@ -1,10 +1,16 @@
-<h1>Favorited Cocktails</h1>
+<h1>Favorite Cocktails</h1>
 
 <div class="cocktail-container">
   <% favorites.forEach(cocktail => { %>
     <div class="cocktail">
-      <img src="<%= cocktail.img_url %>" alt="" width="150">
+      <a href="/cocktails/<%= cocktail.id %>">
+        <img src="<%= cocktail.img_url %>" alt="" width="150">
+      </a>
       <%= cocktail.name %>
+      <form method="POST" action="/users/<%= user.id %>/cocktails/<%= cocktail.id %>?_method=DELETE">
+        <input type="hidden" name="id" value="<%= cocktail.id %>">
+        <input type="submit" value="Remove Cocktail">
+      </form>
     </div>
   <% }) %>
 

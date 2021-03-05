@@ -3,8 +3,14 @@
 <div class="bottle-container">
   <% bottles.forEach(bottle => { %>
     <div class="bottle">
-      <img src="<%= bottle.img_url %>" alt="" width="150">
+      <a href="/bottles/<%= bottle.id %>">
+        <img src="<%= bottle.img_url %>" alt="" width="150">
+      </a>
       <h3><%= bottle.type %></h3>
+      <form method="POST" action="/users/<%= user.id %>/bottles/<%= bottle.id %>?_method=DELETE">
+        <input type="hidden" name="id" value="<%= bottle.id %>">
+        <input type="submit" value="Remove Bottle">
+      </form>
     </div>
   <% }) %>
 

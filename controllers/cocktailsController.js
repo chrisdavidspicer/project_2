@@ -36,8 +36,7 @@ router.get('/:id', async (req, res) => {
     const cocktail = await db.cocktail.findByPk(req.params.id)
     const cocktailURL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail.name}`
     const response = await axios.get(cocktailURL)
-    const cocktails = response.data.drinks
-    console.log(cocktails);
+    const cocktails = response.data.drinks[0]
     res.render('cocktails/show', { cocktail: cocktails })
   } catch (error) {
     console.log(error);

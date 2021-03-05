@@ -1,7 +1,7 @@
 <h1>All Cocktail Recipes</h1>
 
 <% cocktails.forEach(cocktail => { %>
-  <div>
+    <div>
       <form method="GET" action="/cocktails/list">
         <input type="hidden" name="category" value="<%= cocktail.strCategory %>">
         <input type="submit" value="<%= cocktail.strCategory %>">

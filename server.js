@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 3000
 /* Middleware and Config */
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
-app.use(morgan('tiny'))
+app.use(morgan('dev'))
 app.use(ejsLayouts)
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }))

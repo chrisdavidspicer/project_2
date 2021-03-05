@@ -1,14 +1,16 @@
 Questions:
+I have an array of bottles. How do I go over that array and present API information?
+Problem with deleting bottles and cocktails
 
 Debug:
 
 To-Do:
 MVP:
-Add button to delete bottles from collection
 Build out recipes route and view
-Add button to delete cocktails from favorites
 
 STRETCH:
+Add ability to search cocktail by name
+Add ability to click on All cocktails to see specific info
 Add single view pages for bottles, showing applicable recipes
 Add single view pages for cocktails, showing ingredients, recipe, etc.
 Add back buttons to pages

@@ -8,12 +8,15 @@ router.get('/', async (req, res) => {
     // const bottle = await db.bottle.findAll()
     // console.log(bottle);
     const bottle = [
-      { type: 'Whiskey' },
+      { type: 'Absinthe' },
+      { type: 'Bourbon' },
       { type: 'Brandy' },
+      { type: 'Gin' },
       { type: 'Rum' },
-      { type: 'Vodka' },
+      { type: 'Scotch' },
       { type: 'Tequila' },
-      { type: 'Gin' }
+      { type: 'Dry Vermouth' },
+      { type: 'Vodka' },
     ]
     res.render('bottles/index', { bottle: bottle })
   } catch (error) {
