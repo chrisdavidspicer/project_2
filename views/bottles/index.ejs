@@ -1,12 +1,15 @@
 <h1>All Liquor Bottles</h1>
 
-<div>
-  <div class="bottle">
-    <a href="/bottles/<%= bottle.id %>">
-      <img src="" alt="">
-    </a>
-    <form method="POST" action="/users/<%= user.id %>/bottles/?_method=PUT">
-      <input type="submit" class="add-bottle" name="type" value="Add">
-    </form>
-  </div>
+<div class="bottle-container">
+  <% bottle.forEach(bottle => { %>
+    <div class="bottle">
+        <img src="https://www.thecocktaildb.com/images/ingredients/<%= bottle.type %>-Medium.png" alt="<%= bottle.type %>" height="200">
+      <h3><%= bottle.type %></h3>
+      <form method="POST" action="/users/<%= user.id %>/bottles">
+        <input type="hidden" name="img_url" value="https://www.thecocktaildb.com/images/ingredients/<%= bottle.type %>-Medium.png">
+        <input type="hidden" name="type" value="<%= bottle.type %>">
+        <input type="submit" class="add-bottle" value="Add <%= bottle.type %>">
+      </form>
+    </div>
+  <% }) %>
 </div>

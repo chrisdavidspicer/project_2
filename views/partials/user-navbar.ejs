@@ -1,6 +1,8 @@
-<nav id="user-nav">
-  <a href="/users/profile">Profile</a>
-  <a href="/users/cabinet">My Cabinet</a>
-  <a href="/users/recipes">Possible Recipes</a>
-  <a href="/users/favorites">Favorite Recipes</a>
-</nav>
+<% if (user) { %>
+  <nav id="user-nav">
+    <a href="/users/profile">Profile</a>
+    <a href="/users/<%= user.id %>/bottles">My Cabinet</a>
+    <a href="/users/<%= user.id %>/recipes">Possible Recipes</a>
+    <a href="/users/<%= user.id %>/cocktails">Favorite Recipes</a>
+  </nav>
+  <% } %>

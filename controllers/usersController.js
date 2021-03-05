@@ -19,14 +19,15 @@ router.get('/login', (req, res) => {
 })
 
 // Show users cabinet page
-router.get('/cabinet', (req, res) => {
-  res.render('users/cabinet')
-})
+// router.get('/cabinet', (req, res) => {
+//   res.render('users/cabinet')
+// })
 
 // Show users favorite recipes page
-router.get('/favorites', (req, res) => {
-  res.render('users/favorites')
-})
+// router.get('/favorites', async (req, res) => {
+//   const cocktail = 
+//   res.render('users/favorites')
+// })
 
 // Show users possible recipes page
 router.get('/recipes', (req, res) => {
@@ -71,7 +72,7 @@ router.post('/', async (req, res) => {
     })
     const encryptedId = AES.encrypt(user.id.toString(), process.env.COOKIE_SECRET).toString()
     res.cookie('userId', encryptedId)
-    res.redirect('/users/index')
+    res.redirect('/users')
   } catch (error) {
     console.log(error);
     res.render('users/new', { errors: 'Error creating user; try again with new info?'})
@@ -87,7 +88,7 @@ router.post('/login', async (req, res) => {
     if(user && bcrypt.compareSync(req.body.password, user.password)) {
       const encryptedId = AES.encrypt(user.id.toString(), process.env.COOKIE_SECRET).toString()
       res.cookie('userId', encryptedId)
-      res.redirect('bottles/index')
+      res.redirect('/users')
     } else {
       res.render('users/login', { errors: 'Invalid username/password'})
     }
@@ -134,22 +135,9 @@ router.get('/:id/bottles', async (req, res) => {
       },
       include: [db.bottle]
     })
-    res.render('users/cabinet', { user: user })
-  } catch (error) {
-    console.log(error);
-  }
-})
-
-// Show all bottles that user saved - for recipes
-router.get('/:id/bottles', async (req, res) => {
-  try {
-    const user = await db.user.findOne({
-      where: {
-      id: req.params.id
-      },
-      include: [db.bottle]
-    })
-    res.render('users/recipes', { user: user })
+    // console.log(user.bottles)
+    const bottles = user.bottles
+    res.render('users/cabinet', { bottles: bottles })
   } catch (error) {
     console.log(error);
   }
@@ -164,7 +152,10 @@ router.get('/:id/cocktails', async (req, res) => {
       },
       include: [db.cocktail]
     })
-    res.render('users/favorites', { user: user })
+    // console.log(user.cocktails)
+    const favorites = user.cocktails
+    // console.log(favorites);
+    res.render('users/favorites', { favorites: favorites })
   } catch (error) {
     console.log(error);
   }
@@ -174,13 +165,14 @@ router.get('/:id/cocktails', async (req, res) => {
 router.post('/:id/cocktails', async (req, res) => {
   try {
     const [newCocktail, created] = await db.cocktail.findOrCreate({
-      where: { name: req.body.name}
+      where: { name: req.body.name,
+      img_url: req.body.img_url}
     })
     const user = await db.user.findOne({
       where: { id: req.params.id }
     })
     user.addCocktail(newCocktail)
-    res.redirect('/users/favorites')
+    res.redirect(`/users/${req.params.id}/cocktails`)
   } catch (error) {
     console.log(error);
   }
@@ -188,16 +180,19 @@ router.post('/:id/cocktails', async (req, res) => {
 
 // Add a new bottle to the cabinet
 router.post('/:id/bottles', async (req, res) => {
+  console.log(req.body);
   try {
-    const [newBottle, created] = await db.bottle.create({
+    const newBottle = await db.bottle.create({
       type: req.body.type,
       img_url: req.body.img_url
     })
+    console.log(newBottle);
     const user = await db.user.findOne({
       where: { id: req.params.id }
     })
+    console.log(user)
     user.addBottle(newBottle)
-    res.redirect('/bottles/index')
+    res.redirect(`/bottles`)
   } catch (error) {
     console.log(error);
   }

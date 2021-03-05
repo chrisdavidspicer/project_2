@@ -28,3 +28,40 @@ nav a:hover {
   flex-direction: row;
   justify-content: space-around;
 }
+
+.cocktail-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  margin: auto;
+}
+
+.bottle-container {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 690px;
+    margin: auto;
+}
+
+.cocktail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+}
+
+.bottle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 200px;
+}

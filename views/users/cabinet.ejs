@@ -1,1 +1,11 @@
 <h1>User Liquor Cabinet</h1>
+
+<div class="bottle-container">
+  <% bottles.forEach(bottle => { %>
+    <div class="bottle">
+      <img src="<%= bottle.img_url %>" alt="" width="150">
+      <h3><%= bottle.type %></h3>
+    </div>
+  <% }) %>
+
+</div>

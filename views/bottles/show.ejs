@@ -1,3 +1,11 @@
 <h1>Info on single bottle</h1>
 
-<div></div>
+<h2><%= bottle.type %> Cocktail Recipes</h2>
+<div class="cocktail-container">
+  <% cocktails.forEach(cocktail => { %>
+   <div class="cocktail">
+     <img src="<%= cocktail.strDrinkThumb %>" alt="" width="150">
+     <%= cocktail.strDrink %>
+  </div>
+  <% }) %>
+</div>

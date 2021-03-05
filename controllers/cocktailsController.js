@@ -8,6 +8,7 @@ router.get('/', async (req, res) => {
     const cocktailURL = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list'
     const response = await axios.get(cocktailURL)
     const cocktails = response.data.drinks
+    console.log(cocktails[0])
     res.render('cocktails/index', { cocktails: cocktails })
   } catch (error) {
     console.log(error);
@@ -17,11 +18,13 @@ router.get('/', async (req, res) => {
 // Show list of cocktails sorted by category
 router.get('/list', async (req, res) => {
   try {
-    const category = req.body.category
+    const category = req.query.category
+    // console.log(category);
     const cocktailURL = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`
     const response = await axios.get(cocktailURL)
     const cocktails = response.data.drinks
-    res.render('cocktails/list', { cocktails: cocktails })
+    console.log(cocktails[0])
+    res.render('cocktails/list', { cocktails: cocktails, category })
   } catch (error) {
     console.log(error);
   }
@@ -30,10 +33,11 @@ router.get('/list', async (req, res) => {
 // Show info for one specific cocktail
 router.get('/:id', async (req, res) => {
   try {
-    const cocktailURL = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${req.params.id}`
+    const cocktail = await db.cocktail.findByPk(req.params.id)
+    const cocktailURL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail.name}`
     const response = await axios.get(cocktailURL)
     const cocktails = response.data.drinks
-    // console.log(cocktails);
+    console.log(cocktails);
     res.render('cocktails/show', { cocktail: cocktails })
   } catch (error) {
     console.log(error);
@@ -47,10 +51,11 @@ router.get('/:id/bottles', async (req, res) => {
       where: {id: req.params.id},
       include: [db.bottle]
     })
-    const cocktailURL = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${req.params.id}`
+    const cocktailURL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail.name}`
     const response = await axios.get(cocktailURL)
     const cocktails = response.data.drinks
-    res.render('users/recipes', { cocktail, cocktails })
+    console.log(cocktails);
+    // res.render('users/recipes', { cocktail, cocktails })
   } catch (error) {
     console.log(error);
   }

@@ -1,3 +1,23 @@
 <h1>User Profile</h1>
 
-<div></div>
+<form method="POST" action="/users/<%= user.id %>/?_method=PUT">
+  <label for="first-name-input">First Name:</label>
+  <input type="text" name="first_name" id="first-name-input" value="<%= user.first_name %>">
+  <br>
+  <label for="last-name-input">Last Name:</label>
+  <input type="text" name="last_name" id="last-name-input" value="<%= user.last_name %>">
+  <br>
+  <label for="email-input">Email:</label>
+  <input type="text" name="email" id="email-input" value="<%= user.email %>">
+  <br>
+  <label for="password-input">Password:</label>
+  <input type="password" name="password" id="password-input">
+  <br>
+  <label for="profile-image-input">Profile Image URL:</label>
+  <input type="url" name="profile_img" id="profile-image-input" value="<%= user.profile_img %>">
+  <br>
+  <input type="submit" value="Update Account">
+</form>
+<form method="POST" action="/users/<%= user.id %>/?_method=DELETE">
+  <input type="submit" value="Delete Account">
+</form>

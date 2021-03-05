@@ -1,1 +1,14 @@
-<h1>This is a list of cocktails in categories</h1>
+<h2>Recipes in the <%= category %> Category</h2>
+<div class="cocktail-container">
+  <% cocktails.forEach(cocktail => { %>
+   <div class="cocktail">
+     <img src="<%= cocktail.strDrinkThumb %>" alt="" width="150">
+     <%= cocktail.strDrink %>
+     <form method="POST" action="/users/<%= user.id %>/cocktails">
+      <input type="hidden" name="img_url" value="<%= cocktail.strDrinkThumb %>">
+      <input type="hidden" name="name" value="<%= cocktail.strDrink %>">
+      <input type="submit" class="add-cocktail" value="Add to Favorites">
+    </form>
+  </div>
+  <% }) %>
+</div>
