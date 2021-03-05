@@ -1,18 +1,25 @@
 Questions:
-I have an array of bottles. How do I go over that array and present API information?
-Problem with deleting bottles and cocktails
 
 Debug:
 
 To-Do:
+New route for searching for individual cocktail by name
+Search cocktail by name
+https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
+Add form to cocktail index page
+
+
+New route for displaying api of one individual cocktail
+Lookup full cocktail details by id
+https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007
+Add link to cocktail index page
+
 MVP:
-Build out recipes route and view
+Done
 
 STRETCH:
 Add ability to search cocktail by name
 Add ability to click on All cocktails to see specific info
-Add single view pages for bottles, showing applicable recipes
-Add single view pages for cocktails, showing ingredients, recipe, etc.
 Add back buttons to pages
 Rating
 Commenting

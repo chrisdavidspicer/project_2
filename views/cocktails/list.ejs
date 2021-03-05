@@ -4,11 +4,13 @@
    <div class="cocktail">
       <img src="<%= cocktail.strDrinkThumb %>" alt="" width="150">
      <%= cocktail.strDrink %>
-     <form method="POST" action="/users/<%= user.id %>/cocktails">
-      <input type="hidden" name="img_url" value="<%= cocktail.strDrinkThumb %>">
-      <input type="hidden" name="name" value="<%= cocktail.strDrink %>">
-      <input type="submit" class="add-cocktail" value="Add to Favorites">
-    </form>
+     <% if (user) { %>
+      <form method="POST" action="/users/<%= user.id %>/cocktails">
+        <input type="hidden" name="img_url" value="<%= cocktail.strDrinkThumb %>">
+        <input type="hidden" name="name" value="<%= cocktail.strDrink %>">
+        <input type="submit" class="add-cocktail" value="Add to Favorites">
+      </form>
+     <% } %>
   </div>
   <% }) %>
 </div>
