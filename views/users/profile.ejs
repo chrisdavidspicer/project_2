@@ -2,18 +2,20 @@
 <h2>Hello, <%= user.first_name %>!</h2>
 <img src="<%= user.profile_img %>" alt="profile picture">
 
-<form method="POST" action="/users/<%= user.id %>/?_method=PUT">
-  <label for="first-name-input">First Name:</label>
-  <input type="text" name="first_name" id="first-name-input" value="<%= user.first_name %>">
-  <br>
-  <label for="last-name-input">Last Name:</label>
-  <input type="text" name="last_name" id="last-name-input" value="<%= user.last_name %>">
-  <br>
-  <label for="profile-image-input">Profile Image URL:</label>
-  <input type="url" name="profile_img" id="profile-image-input" value="<%= user.profile_img %>">
-  <br>
-  <input type="submit" value="Update Account">
-</form>
-<form method="POST" action="/users/<%= user.id %>/?_method=DELETE">
-  <input type="submit" value="Delete Account">
-</form>
+<div class="update-user">
+  <form method="POST" action="/users/<%= user.id %>/?_method=PUT">
+    <label for="first-name-input">First Name:</label>
+    <input type="text" name="first_name" id="first-name-input" value="<%= user.first_name %>">
+    <br>
+    <label for="last-name-input">Last Name:</label>
+    <input type="text" name="last_name" id="last-name-input" value="<%= user.last_name %>">
+    <br>
+    <label for="profile-image-input">Profile Image URL:</label>
+    <input type="url" name="profile_img" id="profile-image-input" value="<%= user.profile_img %>">
+    <br>
+    <input type="submit" value="Update Account">
+  </form>
+  <form method="POST" action="/users/<%= user.id %>/?_method=DELETE">
+    <input type="submit" value="Delete Account">
+  </form>
+</div>

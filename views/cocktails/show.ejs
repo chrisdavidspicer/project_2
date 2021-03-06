@@ -1,26 +1,33 @@
 <h1>Info on individual cocktail</h1>
-<h2>"<%= cocktail.strDrink %>"</h2>
-<img src="<%= cocktail.strDrinkThumb %>" class="cocktail-img" alt="<%= cocktail.strDrink %>" width="250">
+<div class="cocktail-info">
+  <h2>"<%= cocktail.strDrink %>"</h2>
+  <img src="<%= cocktail.strDrinkThumb %>" class="cocktail-img" id="cocktail-show" alt="<%= cocktail.strDrink %>" width="250">
 
-Glass:
-<%= cocktail.strGlass %>
+<div class="glass">
+  <h3>Glass:</h3>
+  <%= cocktail.strGlass %>
+</div>
 
-Ingredients:
-<%= cocktail.strMeasure1 %> <%= cocktail.strIngredient1 %> 
-<%= cocktail.strMeasure2 %> <%= cocktail.strIngredient2 %> 
-<%= cocktail.strMeasure3 %> <%= cocktail.strIngredient3 %> 
-<%= cocktail.strMeasure4 %> <%= cocktail.strIngredient4 %> 
-<%= cocktail.strMeasure5 %> <%= cocktail.strIngredient5 %> 
-<%= cocktail.strMeasure6 %> <%= cocktail.strIngredient6 %> 
-<%= cocktail.strMeasure7 %> <%= cocktail.strIngredient7 %> 
-<%= cocktail.strMeasure8 %> <%= cocktail.strIngredient8 %> 
-<%= cocktail.strMeasure9 %> <%= cocktail.strIngredient9 %> 
-<%= cocktail.strMeasure10 %> <%= cocktail.strIngredient10 %> 
-<%= cocktail.strMeasure11 %> <%= cocktail.strIngredient11 %> 
-<%= cocktail.strMeasure12 %> <%= cocktail.strIngredient12 %> 
-<%= cocktail.strMeasure13 %> <%= cocktail.strIngredient13 %> 
-<%= cocktail.strMeasure14 %> <%= cocktail.strIngredient14 %> 
-<%= cocktail.strMeasure15 %> <%= cocktail.strIngredient15 %>
+<div class="ingredients">
+  <h3>Ingredients:</h3>
+  <p><%= cocktail.strMeasure1 %> <%= cocktail.strIngredient1 %></p>
+  <p><%= cocktail.strMeasure2 %> <%= cocktail.strIngredient2 %></p>
+  <p><%= cocktail.strMeasure3 %> <%= cocktail.strIngredient3 %></p>
+  <p><%= cocktail.strMeasure4 %> <%= cocktail.strIngredient4 %></p>
+  <p><%= cocktail.strMeasure5 %> <%= cocktail.strIngredient5 %></p>
+  <p><%= cocktail.strMeasure6 %> <%= cocktail.strIngredient6 %></p>
+  <p><%= cocktail.strMeasure7 %> <%= cocktail.strIngredient7 %></p>
+  <p><%= cocktail.strMeasure8 %> <%= cocktail.strIngredient8 %></p>
+  <p><%= cocktail.strMeasure9 %> <%= cocktail.strIngredient9 %></p>
+  <p><%= cocktail.strMeasure10 %> <%= cocktail.strIngredient10 %></p>
+  <p><%= cocktail.strMeasure11 %> <%= cocktail.strIngredient11 %></p>
+  <p><%= cocktail.strMeasure12 %> <%= cocktail.strIngredient12 %></p>
+  <p><%= cocktail.strMeasure13 %> <%= cocktail.strIngredient13 %></p>
+  <p><%= cocktail.strMeasure14 %> <%= cocktail.strIngredient14 %></p>
+  <p><%= cocktail.strMeasure15 %> <%= cocktail.strIngredient15 %></p>
+</div>
 
-Instructions:
-<%= cocktail.strInstructions %>
+<div class="instructions">
+  <h3>Instructions:</h3>
+  <%= cocktail.strInstructions %>
+</div>

@@ -3,13 +3,19 @@ Questions:
 Debug:
 
 To-Do:
-New route for searching for individual cocktail by name
+-Add back buttons?
+-Finish Styling 
+  - Fix margin on cocktail photos
+  - Look for other errors
+  - Fix header info on all pages
+
+-New route for searching for individual cocktail by name
 Search cocktail by name
 https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
 Add form to cocktail index page
 
 
-New route for displaying api of one individual cocktail
+-New route for displaying api of one individual cocktail
 Lookup full cocktail details by id
 https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007
 Add link to cocktail index page
