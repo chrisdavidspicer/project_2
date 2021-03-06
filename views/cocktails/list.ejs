@@ -2,7 +2,7 @@
 <div class="cocktail-container">
   <% cocktails.forEach(cocktail => { %>
    <div class="cocktail">
-      <img src="<%= cocktail.strDrinkThumb %>" alt="" width="150">
+      <img src="<%= cocktail.strDrinkThumb %>" alt="" width="150" class="cocktail-img">
      <%= cocktail.strDrink %>
      <% if (user) { %>
       <form method="POST" action="/users/<%= user.id %>/cocktails">

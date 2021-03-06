@@ -1,10 +1,20 @@
-<h1>All Cocktail Recipes</h1>
+<h1>Cocktails by Category</h1>
 
+<div>
+  <form method="GET" action="/cocktails/search">
+    <label for="search-input">Search by Cocktail Name:</label>
+    <input type="search" name="search" id="search-input">
+    <input type="submit">
+  </form>
+</div>
+
+<div class="button-container">
 <% cocktails.forEach(cocktail => { %>
-    <div>
+    <div class="categories">
       <form method="GET" action="/cocktails/list">
         <input type="hidden" name="category" value="<%= cocktail.strCategory %>">
-        <input type="submit" value="<%= cocktail.strCategory %>">
+        <input type="submit" value="<%= cocktail.strCategory %>" class="category-button">
       </form>
     </div>
 <% }) %>
+</div>

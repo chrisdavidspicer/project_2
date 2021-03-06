@@ -4,7 +4,7 @@
   <% favorites.forEach(cocktail => { %>
     <div class="cocktail">
       <a href="/cocktails/<%= cocktail.id %>">
-        <img src="<%= cocktail.img_url %>" alt="" width="150">
+        <img src="<%= cocktail.img_url %>" alt="" width="150" class="cocktail-img">
       </a>
       <%= cocktail.name %>
       <form method="POST" action="/users/<%= user.id %>/cocktails/<%= cocktail.id %>?_method=DELETE">

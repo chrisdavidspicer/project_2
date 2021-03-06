@@ -1,7 +1,6 @@
-<h1>User landing page</h1>
-
-<div>
-  <input type="button"> User Profile</div>
-<div>My Cabinet</div>
-<div>Possible Recipes</div>
-<div>Favorite Recipes</div>
+<h1>Hello, <%= user.first_name %>, welcome to your account.</h1>
+<div class="user-links">
+  <div class="button"><a href="/users/profile">My Profile</a></div>
+  <div class="button"><a href="/users/<%= user.id %>/bottles">Liquor Cabinet</a></div>
+  <div class="button"><a href="/users/<%= user.id %>/cocktails">Favorite Recipes</a></div>
+</div>
