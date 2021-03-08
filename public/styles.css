@@ -48,7 +48,7 @@ nav a:hover {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 800px;
+  width: 1000px;
   margin: auto;
 }
 
@@ -67,8 +67,8 @@ nav a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
 }
 
 .bottle {
@@ -76,8 +76,13 @@ nav a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 15px;
   width: 200px;
+}
+
+.bottle p {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .button-container {
@@ -137,7 +142,7 @@ nav a:hover {
 }
 
 .cocktail-info {
-  width: 400px;
+  width: 500px;
   margin: auto;
 }
 

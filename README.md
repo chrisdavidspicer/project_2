@@ -1,6 +1,6 @@
 # The Cocktail Cabinet #
 
-The cocktail cabinet is an app that allows users to log in and build their digital liquor cabinet. Update your profile with the quantity of bottles you have in your physical liquor cabinet, and then browse through possible cocktails to make using what you have on hand! If you find a recipe that sounds good, save it to your profile to access anytime you log in. Your possible cocktail list will change depending on updates to your liquor cabinet.
+The cocktail cabinet is an app that allows users to log in and build their digital liquor cabinet. Update your profile with the quantity of bottles you have in your physical liquor cabinet. Browse through all sorts of cocktails, sorted by category or by bottle. If you find a recipe that sounds good, save it to your profile. You can log out and log back in anytime you'd like to look through your liquor cabinet or access your favorite recipes!
 
 
 ### MVP goals ###
@@ -9,7 +9,6 @@ Have a sign up page for new users to join the site.\
 Have a login page for user to access site.\
 Look through a page of liquor bottles with a button to add to your collection.\
 Be able to look through collection, updating or deleting bottles.\
-Access list of cocktails based on what's available in your bottle collection.\
 Add cocktails to your saved recipes, with the ability to view and delete them.
 
 
@@ -17,6 +16,7 @@ Add cocktails to your saved recipes, with the ability to view and delete them.
 
 Add a page to view all cocktails, regardless of what's in user's liquor cabinet.\
 Add ability to view recipes, regardless of sign-in.\
+Access list of cocktails based on what's available in your bottle collection.\
 Make it possible for a user to rate cocktails.\
 Be able to see all users ratings aggregated on individual cocktails.\
 Comment on cocktails and see other users comments.\
@@ -29,7 +29,6 @@ Add styling to have liquor bottles sitting on shelf.
 * As a user, I want to login to the site so that I can access my information that I have saved previously.
 * As a user, I want to look through a page of liquor bottles that I can add to my collection so I can keep track of what I have on hand.
 * As a user, I want to browse my collection of liquor bottles so that I can add, subtract, or delete bottles from my list.
-* As a user, I want to look through a list of cocktails recommended to me based on what I've saved in my liquor cabinet, so that I can save them to my favorite recipes.
 * As a user, I want to be able to look at a list my favorite recipes so that I can access them individually or delete them.
 * As a user, I want to be able to logout so that my information is saved in the database, but is not accessible by other users.
 
@@ -85,4 +84,3 @@ I am planning on using The Cocktail DB, which is a free, crowd-sourced API full 
 
 ### RESTful routing chart for your app ###
 ![Routes-1](./img/routes/Routes-1.png)
-![Routes-2](./img/routes/Routes-2.png)

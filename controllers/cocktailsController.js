@@ -40,19 +40,4 @@ router.get('/:id', async (req, res) => {
   }
 })
 
-// Search cocktail by name
-router.get(':id/search', async (req, res) => {
-  console.log(req.query);
-  try {
-    const cocktail = req.query.cocktail
-    console.log(cocktail);
-    // const cocktailURL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`
-    // const response = await axios.get(cocktailURL)
-    // const cocktails = response.data.drinks
-    // res.render('cocktails/search', {cocktails, cocktail})
-  } catch (error) {
-    console.log(error);
-  }
-})
-
 module.exports = router

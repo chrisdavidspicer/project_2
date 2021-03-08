@@ -1,7 +1,6 @@
-<h1>User Profile</h1>
 <h2>Hello, <%= user.first_name %>!</h2>
 <img src="<%= user.profile_img %>" alt="profile picture">
-
+<p>Update your info, or delete your account.</p>
 <div class="update-user">
   <form method="POST" action="/users/<%= user.id %>/?_method=PUT">
     <label for="first-name-input">First Name:</label>

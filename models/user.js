@@ -13,8 +13,6 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.user.belongsToMany(models.bottle, { through: 'users_bottles'})
       models.user.belongsToMany(models.cocktail, { through: 'users_cocktails'})
-      models.user.hasMany(models.rating)
-      models.user.hasMany(models.comment)
     }
   };
   user.init({

@@ -41,8 +41,6 @@ app.use(async (req, res, next) => {
 app.use('/users', require('./controllers/usersController.js'))
 app.use('/bottles', require('./controllers/bottlesController.js'))
 app.use('/cocktails', require('./controllers/cocktailsController.js'))
-app.use('/ratings', require('./controllers/ratingsController.js'))
-app.use('/comments', require('./controllers/commentsController.js'))
 
 /* Routes */
 app.get('/', (req, res) => {

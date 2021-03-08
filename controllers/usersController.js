@@ -93,7 +93,6 @@ router.put('/:id', async (req, res) => {
         id: req.params.id
       }
     })
-    // const user = db.user.findByPk(req.params.id)
     res.redirect('/users/profile')
   } catch (error) {
     console.log(error);

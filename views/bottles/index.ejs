@@ -5,7 +5,7 @@
   <% bottle.forEach(bottle => { %>
     <div class="bottle">
         <img src="https://www.thecocktaildb.com/images/ingredients/<%= bottle.type %>-Medium.png" alt="<%= bottle.type %>" height="200">
-      <h3><%= bottle.type %></h3>
+      <p><%= bottle.type %></p>
       <form method="POST" action="/users/<%= user.id %>/bottles">
         <input type="hidden" name="img_url" value="https://www.thecocktaildb.com/images/ingredients/<%= bottle.type %>-Medium.png">
         <input type="hidden" name="type" value="<%= bottle.type %>">
