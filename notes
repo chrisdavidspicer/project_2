@@ -3,10 +3,6 @@ Questions:
 Debug:
 
 To-Do:
--Add back buttons?
--Finish Styling 
-  - Look for other errors
-  - Fix header info on all pages
 
 MVP:
 Done
@@ -18,32 +14,6 @@ Add back buttons to pages
 Rating
 Commenting
 Extra Styling
-
-
-
-sequelize model:generate --name=user --attributes=first_name:string,last_name:string,email:string,password:string,profile_img:text
-sequelize model:generate --name=bottle --attributes=type:string,img_url:text
-sequelize model:generate --name=cocktail --attributes=name:string,img_url:text
-sequelize model:generate --name=rating --attributes=rating:integer,userId:integer,cocktailId:integer
-sequelize model:generate --name=comment --attributes=comment:text,userId:integer,cocktailId:integer
-sequelize model:generate --name=users_bottles --attributes=userId:integer,bottleId:integer
-sequelize model:generate --name=users_cocktails --attributes=userId:integer,cocktailId:integer
-sequelize model:generate --name=bottles_cocktails --attributes=bottleId:integer,cocktailId:integer
-
-
-users belongs to many bottles (vice versa) through
-
-users belongs to many cocktails (vice versa) through
-
-bottles belongs to many cocktails (vice versa) through
-
-users has many ratings, ratings belongs to user
-cocktails has many ratings, ratings belongs to cocktail
-
-users has many comments, comments belongs to user
-cocktails has many comments, comments belongs to cocktail
-
-
 
 
 
